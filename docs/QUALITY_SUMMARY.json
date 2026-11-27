@@ -1,0 +1,40 @@
+{
+  "name": "GTCRN DNS3 official",
+  "checkpoint_sha256": "a630d992cf792daf4ce2bb5bcf9c4d389f740a8f09c6e0971184697fe6371b79",
+  "source_sha256": "20bf0610702506fa45cd543454b84bbeb862d73c7c20a3f8d820fdc04da6099b",
+  "torch": "2.6.0+cu124",
+  "stft": "sqrt-Hann 512/256 center=True reflect padding; original offline inference",
+  "scoring": "same input coordinate, 0.4 s burn-in, final 256 samples excluded, PCM16",
+  "n": 1792,
+  "summary": {
+    "LBMCRN v1.0": [
+      0.8216492430582282,
+      0.6922736554731633,
+      1.9751090418680437,
+      13.20544025046195,
+      5.194488417181987
+    ],
+    "NSNet2": [
+      0.8219273925070189,
+      0.6977527574120658,
+      1.9977627411883856,
+      11.045788965317609,
+      3.0348371320376475
+    ],
+    "NSNet3": [
+      0.8447850538390735,
+      0.7262281888356767,
+      2.164027883405132,
+      13.715572445389638,
+      5.704620612109676
+    ],
+    "GTCRN (DNS3)": [
+      0.8435808822970372,
+      0.7273315238079653,
+      2.1685514849876717,
+      13.794277366630993,
+      5.783325533351031
+    ]
+  },
+  "checkpoint_source": "https://github.com/Xiaobin-Rong/gtcrn/blob/main/checkpoints/model_trained_on_dns3.tar"
+}

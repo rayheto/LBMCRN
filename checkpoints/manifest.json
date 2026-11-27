@@ -1,0 +1,22 @@
+{
+  "name": "LBMCRN v1.0",
+  "model_id": "lbmcrn-v1.0",
+  "sample_rate": 16000,
+  "parameters": 29220,
+  "source_seed": 43,
+  "source_checkpoint_sha256": "633d8966e9e6bfd7d303d3c2317a7b2a17e70922a8f696b909994f4088cf97cc",
+  "files": {
+    "lbmcrn-v1.0.pt": {
+      "sha256": "22096d82e5cec5deec579a2f71d825e12d9518531638229a3981c7615659674b",
+      "bytes": 229032
+    },
+    "lbmcrn-v1.0-int16.espdl": {
+      "sha256": "9b425160c2125002b79528fc846c9b934488a4292d4953ac4409b8c6eee1cfc9",
+      "bytes": 133680
+    }
+  },
+  "algorithm_status": "frozen",
+  "device_acceptance": "runtime and 64-frame mask parity measured; full PCM quality and I2S pending",
+  "device_memory_profile": "all_psram",
+  "device_activation_backend": "arithmetic_prelu"
+}

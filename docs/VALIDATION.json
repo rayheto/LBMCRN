@@ -1,0 +1,18 @@
+{
+  "torch": "2.15.0+cpu",
+  "strict_load": true,
+  "all_state_tensors_equal_source": true,
+  "parameters": 29220,
+  "audio_lengths": [
+    1,
+    255,
+    256,
+    257,
+    16000
+  ],
+  "batch_size_checked": 2,
+  "real_input_samples": 105600,
+  "waveform_equals_original_backbone_path": true,
+  "output_float_sha256": "b59c5df0555318bfdce8aa0fe8c8f626a7b5864e1ad4ceea975d40a493a9f0fc",
+  "device_results": "DEVICE_RESULTS.json"
+}

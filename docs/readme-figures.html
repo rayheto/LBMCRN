@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>LBMCRN overview</title><style>
+
+:root{color-scheme:light;font-family:Inter,'DejaVu Sans',Arial,sans-serif;color:#14283a;background:#f4f7fa}
+body{max-width:1120px;margin:0 auto;padding:44px 40px;background:#f4f7fa}
+h1{font-size:32px;letter-spacing:-1px;margin:0 0 10px;color:#102d42}
+p{color:#506375;font-size:15px;line-height:1.6}
+form{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 18px;padding:20px;background:#e7eef3;border-radius:12px}
+label{display:grid;gap:7px;font-size:12px;font-weight:600;color:#40586b}
+select,input{font:inherit;font-size:13px;padding:10px;border:1px solid #c9d7e2;border-radius:6px;background:#fff;color:#14283a;max-width:165px}
+button{font:inherit;border:0;background:#14384b;color:#fff;border-radius:6px;padding:10px 16px;align-self:end}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums;background:#fff}
+th,td{padding:18px 13px;text-align:right;border-bottom:1px solid #e1e8ee}
+thead th{background:#16384b;color:#fff;font-size:12px;font-weight:500}
+th:first-child,td:first-child{text-align:left}
+tbody tr:nth-child(4n+1){background:#e2f3ed}
+tbody th{font-weight:600}caption{text-align:left;padding:14px 0;color:#506375;font-size:13px}
+.scroll{overflow-x:auto;border-radius:10px}small{display:block;line-height:1.6;font-size:12px;color:#53697b}footer{margin-top:20px}#status{font-size:14px;color:#17684e;font-weight:600}
+
+body{max-width:none;width:1120px;padding:0;margin:0}section{padding:44px;box-sizing:border-box;width:1120px}
+#hero{background:#112d3e;color:#fff;padding:54px 48px}
+#hero h1{font-size:72px;letter-spacing:-3px;color:#fff;margin:12px 0}
+#hero p{color:#bdd1dd;margin:0;font-size:18px}
+.eyebrow{font-size:13px;letter-spacing:2px;color:#75d3b3}
+.stats{display:flex;gap:54px;margin:34px 0}.stat strong{display:block;font-size:30px;font-weight:600;color:#a1efd3}.stat span{display:block;font-size:13px;color:#bdd1dd;margin-top:5px}
+.pipeline{display:flex;align-items:center;gap:12px;margin-top:24px}
+.node{background:#204556;padding:16px 18px;border-radius:8px;font-size:14px;flex:1}.node small{color:#bdd1dd;font-size:12px;margin-top:5px}.arrow{color:#75d3b3}
+#board{background:#f4f7fa}#board h1{font-size:30px}#board table{font-size:13px}#board tbody tr{background:#fff}#board tbody tr:first-child{background:#e2f3ed}#board td,#board th{padding:16px 10px}
+</style>
+<section id="hero"><div class="eyebrow">CAUSAL SPEECH ENHANCEMENT</div><h1>LBMCRN</h1><p>Low-rank Band-Mixing Convolutional Recurrent Network</p><div class="stats"><div class="stat"><strong>29.2K</strong><span>total parameters</span></div><div class="stat"><strong>16 kHz</strong><span>mono audio</span></div><div class="stat"><strong>33 → 8 → 33</strong><span>low-rank band mixing</span></div></div><div class="pipeline"><div class="node">Convolutional encoder<small>spectral features</small></div><span class="arrow">→</span><div class="node">Band mixing + GRU ×2<small>frequency + time modeling</small></div><span class="arrow">→</span><div class="node">Decoder + complex mask<small>spectral enhancement</small></div></div></section>
+<section id="board"><table id="board-table"><caption>XIAO ESP32-S3 · 240 MHz</caption><thead><tr><th>Model / implementation</th><th>Audio / call</th><th>Compute / call</th><th>CPU0</th><th>Model package</th><th>Init SRAM*</th><th>Init PSRAM*</th></tr></thead><tbody>
+<tr><th>LBMCRN v1.0 · INT16</th><td>16 ms</td><td>9.072 ms p50</td><td>56.82%</td><td>133,680 B</td><td>560 B</td><td>279,656 B</td></tr>
+<tr><th>NSNet2 · ESP-SR</th><td>32 ms</td><td>8.503 ms mean</td><td>27.13%</td><td>337,709 B</td><td>8,616 B</td><td>395,760 B</td></tr>
+<tr><th>NSNet3 · ESP-SR</th><td>16 ms</td><td>11.890 ms mean</td><td>75.00%</td><td>108,740 B</td><td>80 B</td><td>242,340 B</td></tr>
+<tr><th>GTCRN · ESP-DL INT16</th><td>16 ms</td><td>37.500 ms p50</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody></table></section></html>
